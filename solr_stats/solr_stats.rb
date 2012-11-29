@@ -48,7 +48,6 @@ class SolrStatistics < Scout::Plugin
             avg_time = XPath.first(node, "*//stat[@name='avgTimePerRequest']").text.strip
 
             counter(handler + '-requests', requests, :per => :second)
-            counter(handler + '-time', time, :per => :second)
             report(
                 handler + '-delta' => get_delta_rt(handler, requests, time),
                 handler + '-avg' => avg_time
