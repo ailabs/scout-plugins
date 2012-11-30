@@ -1,0 +1,22 @@
+metadata: !map:HashWithIndifferentAccess 
+  avg_req: !map:HashWithIndifferentAccess 
+    label: Avg req
+    units: p/s
+    precision: "2"
+    delimiter: ","
+  avg_sent: !map:HashWithIndifferentAccess 
+    label: Avg sent
+    units: bytes
+    precision: "0"
+    delimiter: ","
+  avg_query: !map:HashWithIndifferentAccess 
+    label: Avg query time
+    units: ms
+    precision: "2"
+    delimiter: ","
+  avg_recv: !map:HashWithIndifferentAccess 
+    label: Avg recv
+    units: bytes
+    precision: "0"
+    delimiter: ","
+
