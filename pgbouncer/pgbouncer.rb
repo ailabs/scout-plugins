@@ -27,9 +27,6 @@ class PGBouncer < Scout::Plugin
     EOS
 
     def build_report
-        now = Time.now
-        report = {}
-        
         begin
             pgconn = PGconn.new(
                     :host => option(:host), 
@@ -51,7 +48,6 @@ class PGBouncer < Scout::Plugin
             if row['database'] != option(:dbname)
                 next
             end
-            puts row
             report(
                 :avg_req => row['avg_req'].to_i,
                 :avg_recv => row['avg_recv'].to_i,
