@@ -53,10 +53,10 @@ class PGBouncer < Scout::Plugin
             end
             puts row
             report(
-                :avg_req => row['avg_req'],
-                :avg_recv => row['avg_recv'],
-                :avg_sent => row['avg_sent'],
-                :avg_query => row['avg_query'] / 1000
+                :avg_req => row['avg_req'].to_i,
+                :avg_recv => row['avg_recv'].to_i,
+                :avg_sent => row['avg_sent'].to_i,
+                :avg_query => row['avg_query'].to_i / 1000
             )
         end
     end
